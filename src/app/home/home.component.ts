@@ -38,16 +38,9 @@ export class HomeComponent{
     window.open(url, '_blank');
   }
  
-  goToResume() {
-    window.open('https://example.com', '_blank');
-  };
 
-  goToGit() {
-    window.open('https://example.com', '_blank');
-  };
-
-  goToLink() {
-    window.open('https://example.com', '_blank');
-  };
+  goToUrl(url: string) {
+    window.open(url, '_blank');
+  }
 
 }
