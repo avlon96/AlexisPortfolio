@@ -3,10 +3,24 @@
     <img src="assets/img/lefthero.png" alt="Main Image">
   </div>
 
+  <div class="middle-buttons">
+  <div class="example-button-container" color="accent" (click)="goToGit()">
+    <button mat-fab extended>
+      <mat-icon>favorite</mat-icon>
+      GitHub
+    </button>
+  </div>
+  <div class="example-button-container" color="accent" (click)="goToLink()">
+    <button mat-fab extended>
+      <mat-icon>favorite</mat-icon>
+      Linkdin
+    </button>
+  </div>
+  </div>
+
   <div class="right-boxes">
     <div class="box" *ngFor="let box of boxes" (click)="openLink(box.link)">
-      <img [src]="box.image" [alt]="box.label">
-      <p>{{ box.label }}</p>
+      <img [src]="box.image" [alt]="box">
     </div>
   </div>
 </div>

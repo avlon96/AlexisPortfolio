@@ -1,3 +1,4 @@
+
 <section>
     <div class="example-button-row">
       <div class="example-flex-container">
@@ -7,18 +8,18 @@
             Home
           </button>
         </div>
-        <div class="example-button-container" color="accent" (click)="goToProjects()">
+        <div class="example-button-container" color="accent" (click)="goToUrl('https://drive.google.com/file/d/1Te7xOI3oghVy9VeRqcGiavnevD-JGOFU/view?usp=share_link')">
             <button mat-fab extended>
               <mat-icon>favorite</mat-icon>
-              Projects
+              Resume
             </button>
           </div>
        
-        <div class="example-button-container" color="accent" (click)="goToContact()">
-          <a mat-fab extended routerLink=".">
+        <div class="example-button-container" color="accent" (click)="showEmailInSnackBar()" aria-label="Show Email">
+            <button mat-fab extended>
             <mat-icon>favorite</mat-icon>
             Contact Me!
-          </a>
+        </button>
         </div>
       </div>
     </div>
