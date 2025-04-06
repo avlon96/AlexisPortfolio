@@ -11,14 +11,14 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent{
   boxes = [
     {
-      image: 'assets/images/box1.png',
-      label: 'Google',
-      link: 'https://www.google.com'
+      image: 'assets/img/ASD.png',
+      label: 'ASD WELLNESS',
+      link: 'https://www.asdwellness.net'
     },
     {
       image: 'assets/images/box2.png',
-      label: 'YouTube',
-      link: 'https://www.youtube.com'
+      label: 'AP COSMETICS',
+      link: 'https://www.apcosmetics.com'
     },
     {
       image: 'assets/images/box3.png',
