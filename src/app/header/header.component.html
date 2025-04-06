@@ -1,1 +1,25 @@
-
+<section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <div class="example-button-container" color="accent" (click)="goToHome()">
+          <button mat-fab extended>
+            <mat-icon>favorite</mat-icon>
+            Home
+          </button>
+        </div>
+        <div class="example-button-container" color="accent" (click)="goToProjects()">
+            <button mat-fab extended>
+              <mat-icon>favorite</mat-icon>
+              Projects
+            </button>
+          </div>
+       
+        <div class="example-button-container" color="accent" (click)="goToContact()">
+          <a mat-fab extended routerLink=".">
+            <mat-icon>favorite</mat-icon>
+            Contact Me!
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>

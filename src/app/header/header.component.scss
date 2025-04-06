@@ -1,0 +1,29 @@
+section {
+
+    .example-button-row {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+  
+      .example-flex-container {
+        display: flex;
+        gap: 1rem; 
+        flex-wrap: wrap;
+      }
+  
+      .example-button-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+  
+        button, a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+    // background-color: aquamarine;
+  }
+  
+  
