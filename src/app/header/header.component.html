@@ -1,26 +1,29 @@
+<section class="header-container">
+  <div class="logo-container">
+    <img src="assets/img/logo.png" alt="Logo" class="logo-image" />
+  </div>
 
-<section>
-    <div class="example-button-row">
-      <div class="example-flex-container">
-        <div class="example-button-container" color="accent" (click)="goToHome()">
-          <button mat-fab extended>
-            <mat-icon>favorite</mat-icon>
-            Home
-          </button>
-        </div>
-        <div class="example-button-container" color="accent" (click)="goToUrl('https://drive.google.com/file/d/1Te7xOI3oghVy9VeRqcGiavnevD-JGOFU/view?usp=share_link')">
-            <button mat-fab extended>
-              <mat-icon>favorite</mat-icon>
-              Resume
-            </button>
-          </div>
-       
-        <div class="example-button-container" color="accent" (click)="showEmailInSnackBar()" aria-label="Show Email">
-            <button mat-fab extended>
-            <mat-icon>favorite</mat-icon>
-            Contact Me!
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <div class="example-button-container" color="accent" (click)="goToHome()">
+        <button mat-fab extended>
+          <mat-icon>favorite</mat-icon>
+          Home
         </button>
-        </div>
+      </div>
+      <div class="example-button-container" color="accent"
+           (click)="goToUrl('https://drive.google.com/file/d/1Te7xOI3oghVy9VeRqcGiavnevD-JGOFU/view?usp=share_link')">
+        <button mat-fab extended>
+          <mat-icon>favorite</mat-icon>
+          Resume
+        </button>
+      </div>
+      <div class="example-button-container" color="accent" (click)="showEmailInSnackBar()" aria-label="Show Email">
+        <button mat-fab extended>
+          <mat-icon>favorite</mat-icon>
+          Contact Me!
+        </button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
