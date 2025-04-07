@@ -63,7 +63,6 @@ app.get('*', (req: { baseUrl: any; }, res: { render: (arg0: string, arg1: { req:
   });
 });
 
-export const handler = require('serverless-http')(app);
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
@@ -114,6 +113,8 @@ if (isMainModule(import.meta.url)) {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
+
+export const handler = require('serverless-http')(app);
 
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
