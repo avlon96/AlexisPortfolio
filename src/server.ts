@@ -4,16 +4,55 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
-import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import 'zone.js/node';
+import { ngExpressEngine, RenderOptions } from '@nguniversal/express-engine';
+import express from 'express';
+import { join } from 'path';
 
+// import { AppServerModule } from './src/main.server';
+import { APP_BASE_HREF } from '@angular/common';
+import { existsSync } from 'fs';
+import { InjectionToken } from '@angular/core';
+
+const DIST_FOLDER = join(process.cwd(), 'dist/browser');
+const app = express();
+
+// // Set the engine
+// app.engine('html', ngExpressEngine({
+//   bootstrap: AppServerModule,
+// }));
+
+app.set('view engine', 'html');
+app.set('views', DIST_FOLDER);
+
+// Static files
+app.get('*.*', express.static(DIST_FOLDER, {
+  maxAge: '1y'
+}));
+
+// All regular routes use the Universal engine
+app.get('*', (req: { baseUrl: any; }, res: { render: (arg0: string, arg1: { req: any; providers: { provide: InjectionToken<string>; useValue: any; }[]; }) => void; }) => {
+  res.render('index', {
+    req,
+    providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }]
+  });
+});
+
+export const handler = require('serverless-http')(app);
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
-const app = express();
 const angularApp = new AngularNodeAppEngine();
-
+const customRender = (
+  filePath: string,
+  options: object,
+  callback: (err: Error | null, html?: string) => void
+) => {
+  const opts = options as RenderOptions;
+  // now you can safely use opts.req, opts.bootstrap, etc.
+};
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -40,14 +79,7 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use('/**', (req, res, next) => {
-  angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
-});
+
 
 /**
  * Start the server if this module is the main entry point.
