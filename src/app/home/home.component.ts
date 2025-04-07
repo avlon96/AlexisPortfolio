@@ -31,7 +31,7 @@ export class HomeComponent{
     {
       image: 'assets/img/soul.png',
       // label: 'SOULGINEER STRUCTUAL ENGINEERING',
-      link: 'https://angular.io'
+      link: 'https://soulgineer.netlify.app'
     }
   ];
   openLink(url: string) {
