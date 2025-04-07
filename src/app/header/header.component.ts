@@ -29,6 +29,10 @@ showEmail: any;
     this.router.navigate(['/']);
   };
 
+  goToProject() {
+    this.router.navigate(['/project']);
+  };
+
   goToContact() {
     this.router.navigate(['/contact']);
   };

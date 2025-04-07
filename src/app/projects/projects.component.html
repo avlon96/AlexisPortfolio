@@ -1,3 +1,7 @@
-<p>
-  projects works!
-</p>
+<div class="container">
+<div class="right-boxes">
+  <div class="box" *ngFor="let box of boxes" (click)="openLink(box.link)">
+    <img [src]="box.image" [alt]="box">
+  </div>
+</div>
+</div>
