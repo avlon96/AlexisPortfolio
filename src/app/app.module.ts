@@ -7,6 +7,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ResumeComponent } from './resume/resume.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ResumeComponent } from './resume/resume.component';
     ProjectsComponent,
     FooterComponent,
     HeaderComponent,
-    ResumeComponent
+    ResumeComponent,
+    CommonModule
   ],
   providers: [], // Add services here (optional)
   bootstrap: [], 

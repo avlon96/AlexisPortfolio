@@ -37,6 +37,10 @@ showEmail: any;
     this.router.navigate(['/contact']);
   };
 
+  goToResume() {
+    this.router.navigate(['/resume']);
+  };
+
   goToUrl(url: string) {
     window.open(url, '_blank');
   }
