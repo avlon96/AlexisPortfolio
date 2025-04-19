@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { ResumeComponent } from './resume/resume.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HeaderComponent } from './header/header.component';
     ContactComponent,
     ProjectsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ResumeComponent
   ],
   providers: [], // Add services here (optional)
   bootstrap: [], 
