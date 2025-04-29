@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -42,5 +43,11 @@ export class HomeComponent{
   goToUrl(url: string) {
     window.open(url, '_blank');
   }
+
+  constructor(private router: Router) {}
+
+  goToProject() {
+    this.router.navigate(['/project']);
+  };
 
 }

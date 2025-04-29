@@ -14,6 +14,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HeaderComponent {
 showEmail: any;
+menuOpen = false;
+
+toggleMenu() {
+  this.menuOpen = !this.menuOpen;
+}
 
   constructor(private router: Router, private snackBar: MatSnackBar) { }
 

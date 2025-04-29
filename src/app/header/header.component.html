@@ -1,51 +1,51 @@
 <section class="header-container">
   <div class="logo-container">
-    <img src="assets/img/logo.png" alt="Logo" class="logo-image" />
+    <img src="assets/img/logo.png" alt="Logo" class="logo-image" (click)="goToHome()" />
   </div>
 
-  <div class="button-row">
+  <!-- Mobile menu button (hidden on desktop) -->
+  <button mat-icon-button class="mobile-menu-button" (click)="toggleMenu()" aria-label="Toggle menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="button-row" [class.mobile-visible]="menuOpen">
     <div class="flex-container">
-      <div class="button-container" color="accent" (click)="goToHome()">
+      <div class="button-container" color="accent" (click)="goToHome(); menuOpen = false;">
         <button mat-fab extended>
-          <mat-icon>favorite</mat-icon>
+          <mat-icon>home</mat-icon>
           Home
         </button>
       </div>
-      <div class="button-container" color="accent"
-      (click)="goToResume()">
+      <div class="button-container" color="accent" (click)="goToResume(); menuOpen = false;">
         <button mat-fab extended>
-          <mat-icon>favorite</mat-icon>
+          <mat-icon>description</mat-icon>
           Resume
         </button>
       </div>
-      <div class="button-container" color="accent" (click)="showEmailInSnackBar()" aria-label="Show Email">
+      <div class="button-container" color="accent" (click)="showEmailInSnackBar(); menuOpen = false;" aria-label="Show Email">
         <button mat-fab extended>
-          <mat-icon>favorite</mat-icon>
+          <mat-icon>email</mat-icon>
           Contact Me!
         </button>
       </div>
-
-      <div class="button-container" color="accent"
-           (click)="goToUrl('https://github.com/avlon96')">
+      <div class="button-container" color="accent" (click)="goToUrl('https://github.com/avlon96'); menuOpen = false;">
         <button mat-fab extended>
-          <mat-icon>favorite</mat-icon>
+          <mat-icon>code</mat-icon>
           GitHub
         </button>
       </div>
-
-      <div class="button-container" color="accent"
-      (click)="goToUrl('https://www.linkedin.com/in/alexis-graves-6326a147/')">
-   <button mat-fab extended>
-     <mat-icon>favorite</mat-icon>
-     LinkedIn
-   </button>
- </div>
- <div class="button-container" color="accent" (click)="goToProject()">
-  <button mat-fab extended>
-    <mat-icon>favorite</mat-icon>
-    Portfolio
-  </button>
-</div>
+      <div class="button-container" color="accent" (click)="goToUrl('https://www.linkedin.com/in/alexis-graves-6326a147/'); menuOpen = false;">
+        <button mat-fab extended>
+          <mat-icon>people</mat-icon>
+          LinkedIn
+        </button>
+      </div>
+      <div class="button-container" color="accent" (click)="goToProject(); menuOpen = false;">
+        <button mat-fab extended>
+          <mat-icon>work</mat-icon>
+          Portfolio
+        </button>
+      </div>
     </div>
   </div>
 </section>
