@@ -14,18 +14,18 @@ section.header-container {
     }
   }
 
-  .example-button-row {
+  .button-row {
     display: flex;
     justify-content: flex-end;
     flex: 1;
 
-    .example-flex-container {
+    .flex-container {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .example-button-container {
+    .button-container {
       display: flex;
       align-items: center;
       cursor: pointer;
