@@ -1,3 +1,4 @@
+<!-- Hero Section -->
 <div class="container">
   <div class="left-image">
     <img src="assets/img/lefthero.png" alt="Main Image" (click)="goToProject()">
@@ -5,7 +6,20 @@
 
   <div class="right-boxes">
     <div class="box" *ngFor="let box of boxes" (click)="openLink(box.link)">
-      <img [src]="box.image" [alt]="box">
+      <img [src]="box.image" [alt]="box.label || 'Project Image'">
+    </div>
+  </div>
+</div>
+
+<!-- Scrollable Carousel Section -->
+<div class="carousel-section">
+  <div class="carousel">
+    <div 
+      class="carousel-item" 
+      *ngFor="let box of boxes" 
+      (click)="openLink(box.link)"
+    >
+      <img [src]="box.image" [alt]="box.label || 'Project Logo'">
     </div>
   </div>
 </div>

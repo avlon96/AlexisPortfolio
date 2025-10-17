@@ -13,28 +13,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent{
-  boxes = [
-    {
-      image: 'assets/img/ASD.png',
-      // label: 'ASD WELLNESS',
-      link: 'https://www.asdwellness.net'
-    },
-    {
-      image: 'assets/img/2.png',
-      // label: 'AP COSMETICS',
-      link: 'https://www.apcosmetics.com'
-    },
-    {
-      image: 'assets/img/HTHHC.png',
-      // label: 'HARPER THOMPSON HOME HEALTH CARE',
-      link: 'https://hthhc.org'
-    },
-    {
-      image: 'assets/img/soul.png',
-      // label: 'SOULGINEER STRUCTUAL ENGINEERING',
-      link: 'https://soulgineer.netlify.app'
-    }
-  ];
+ boxes = [
+  { image: 'assets/img/ASD.png', label: 'ASD Wellness', link: 'https://www.asdwellness.net' },
+  { image: 'assets/img/2.png', label: 'AP Cosmetics', link: 'https://www.apcosmetics.com' },
+  { image: 'assets/img/HTHHC.png', label: 'Harper Thompson HHC', link: 'https://hthhc.org' },
+  { image: 'assets/img/soul.png', label: 'Soulgineer Engineering', link: 'https://soulgineer.netlify.app' },
+  { image: 'assets/img/translogo.png', label: 'SummarizeLab', link: 'https://summarizelab.com' },
+];
+
   openLink(url: string) {
     window.open(url, '_blank');
   }

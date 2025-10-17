@@ -1,11 +1,21 @@
+/* Make the whole page scrollable */
+:host {
+  display: block;
+  overflow-y: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* HERO SECTION */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 100px;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 60px 20px;
   background-color: white;
+  min-height: 100vh; /* ✅ Ensures full section height */
 
   .left-image img {
     width: 450px;
@@ -15,7 +25,7 @@
     transform: translateY(-50px);
     animation: dropIn 1.6s ease-out forwards;
   }
-  
+
   @keyframes dropIn {
     to {
       opacity: 1;
@@ -23,44 +33,109 @@
     }
   }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 
-      &:hover {
-        background-color: #0056b3;
-      }
+    &:hover {
+      background-color: #0056b3;
     }
   }
+}
 
-  .right-boxes {
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    grid-gap: 20px;
+.right-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 20px;
 
-    .box {
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+  .box {
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #d7e8f6;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* --- CAROUSEL SECTION --- */
+.carousel-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9fafb;
+  min-height: 60vh; /* ✅ Gives it enough space for scrolling */
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel {
+    scrollbar-width: none;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.15));
+      transition: transform 0.3s ease, filter 0.3s ease;
 
       &:hover {
         transform: scale(1.05);
-        background-color: #d7e8f6;
-      }
-
-      img {
-        width: 180px;
-        height: 180px;
-        object-fit: contain;
-        margin-bottom: 10px;
+        filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.4));
       }
     }
   }
+}
